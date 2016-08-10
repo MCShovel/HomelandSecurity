@@ -1,0 +1,13 @@
+# BungeeWarped configuration file, visit https://github.com/MCShovel/BungeeWarped/wiki
+
+options:
+
+#MySQL Settings --- REQUIRED ---
+#Stores warp and home locations as well as cross-server teleports
+mysql:
+  host: localhost
+  port: 3306
+  username: root
+  password: password
+  database: bungeewarped
+  tablePrefix: 'bwarped_'

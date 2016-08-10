@@ -1,0 +1,13 @@
+name: HomelandSecurity
+main: com.pvpMinecraft.HomelandSecurityPlugin
+version: '0.0.1'
+author: MCShovel
+load: POSTWORLD
+softdepend: [Vault, WorldEdit, WorldGuard, Movecraft, Cannons]
+
+commands:
+   claim:
+      description: Claim land for your use and keep the bad guys out.
+      usage: /claim
+      permission: homeland.player
+      permission-message: &4You do not have access to this command.
