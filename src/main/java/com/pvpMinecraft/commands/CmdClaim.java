@@ -25,7 +25,7 @@ public class CmdClaim extends BaseCommand {
 		VisualizationBox box = VisualizationBox.FromLocation(player.getWorld(), where, VisualizationType.Claim, player.getLocation());
 		box.Draw(player, true);
 
-		final ProgressBarDisplay bar = new ProgressBarDisplay(player, "Hello World", 0);
+		final ProgressBarDisplay bar = new ProgressBarDisplay(player, "Hello World");
 		
 		final int[] ids = new int[1];
 		

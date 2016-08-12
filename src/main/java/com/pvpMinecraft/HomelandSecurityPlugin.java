@@ -2,7 +2,6 @@ package com.pvpMinecraft;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class HomelandSecurityPlugin extends JavaPlugin {
@@ -12,6 +11,7 @@ public class HomelandSecurityPlugin extends JavaPlugin {
 	public final HomelandConfig Config;
 	public final HomelandMessage Messages;
 	private final HomelandCommands Commands;
+	private final HomelandEvents Events;
 	
 	public HomelandSecurityPlugin() {
 		_logger = getLogger();
@@ -20,6 +20,7 @@ public class HomelandSecurityPlugin extends JavaPlugin {
 		Config = new HomelandConfig(this);
 		Messages = new HomelandMessage(this);
 		Commands = new HomelandCommands(this);
+		Events = new HomelandEvents(this);
 		_loaded = Config.load() && Messages.load() && Commands.load();
 	}
 
@@ -33,14 +34,15 @@ public class HomelandSecurityPlugin extends JavaPlugin {
     		log(Level.SEVERE, "Configuration did not load, disabling service.");
     		return;
     	}
-        //getServer().getPluginManager().registerEvents(_listener, this);
+
     	Commands.RegisterAll();
+    	Events.RegisterAll();
     	log(Level.CONFIG, "Plugin ready.");
     }
 
     @Override
     public void onDisable() {
-    	//HandlerList.unregisterAll(_listener);
+    	Events.UnregisterAll();
 		log(Level.CONFIG, "Plugin unregistered for events.");
     }
 

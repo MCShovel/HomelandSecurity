@@ -13,6 +13,7 @@ public class ProgressBarDisplay {
 	public ProgressBarDisplay(Player player, String Title) {
 		this.player = player;
 		bbar = player.getServer().createBossBar(Title, BarColor.BLUE, BarStyle.SEGMENTED_20, BarFlag.DARKEN_SKY);
+		bbar.setProgress(0);
 		bbar.setVisible(true);
 		bbar.addPlayer(player);
 	}
