@@ -1,0 +1,11 @@
+*.class
+.*
+target/
+out/
+BungeePortals.iml
+
+# intellij
+*.iml
+*.ipr
+*.iws
+.idea/
